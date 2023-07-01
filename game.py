@@ -21,7 +21,7 @@ fruit_x = random.randint(0, largura - 30)
 fruit_y = random.randint(0, altura - 30)
 
 speed = 2
-growth_rate = 20  # Adjust the growth rate here
+growth_rate = 20  
 score = 0
 
 snake = []
@@ -82,7 +82,7 @@ while not game_over:
             speed += 0.05
             score += 1
             for _ in range(growth_rate):
-                snake.append(snake[-1])  # Add the appropriate number of segments based on the growth rate
+                snake.append(snake[-1])  
 
         # Check for collision with itself
         for segment in snake[1:]:
@@ -117,7 +117,6 @@ while not game_over:
         elif event.type == MOUSEBUTTONDOWN:
             mouse_pos = pygame.mouse.get_pos()
             if play_again_rect.collidepoint(mouse_pos):
-                # Reset game variables and start a new game
                 x = largura // 2
                 y = altura // 2
                 speed = 2
